@@ -41,30 +41,253 @@
   </head>
   <body>
     <!-- header  -->
-   <header class="flex items-center justify-between mb-7 shadow rounded-2xl p-2  ">
-    <div class="flex items-center gap-2 font-bold text-xl">
-      <img src="./assets/github-logo.png" class="w-6 h-6" alt="logo">
-      <span>GitHub Issues Tracker</span>
-    </div>
-    <div class="flex gap-4">
-      <div class="relative">
-        <input type="text" placeholder="Search issues..." class="pl-10 pr-4 py-2 border rounded-lg w-64 focus:ring-2 focus:ring-indigo-500 outline-none">
-        <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-gray-400"></i>
+    <header
+      class="flex items-center justify-between mb-7 shadow rounded-2xl p-2"
+    >
+      <div class="flex items-center gap-2 font-bold text-xl">
+        <img src="./assets/github-logo.png" class="w-6 h-6" alt="logo" />
+        <span>GitHub Issues Tracker</span>
       </div>
-      <button class="bg-indigo-600 text-white cursor-pointer px-4 py-2 rounded-lg font-semibold hover:bg-indigo-700 transition">+ New Issue</button>
+      <div class="flex gap-4">
+        <div class="relative">
+          <input
+            type="text"
+            placeholder="Search issues..."
+            class="pl-10 pr-4 py-2 border rounded-lg w-64 focus:ring-2 focus:ring-indigo-500 outline-none"
+          />
+          <i
+            class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-gray-400"
+          ></i>
+        </div>
+        <button
+          class="bg-indigo-600 text-white cursor-pointer px-4 py-2 rounded-lg font-semibold hover:bg-indigo-700 transition"
+        >
+          + New Issue
+        </button>
+      </div>
+    </header>
+    <!-- button -->
+    <div
+      class="bg-white p-4 rounded-xl shadow mb-6 flex gap-2 max-w-11/12 mx-auto"
+    >
+      <button class="px-8 py-2 bg-indigo-600 text-white rounded-lg font-medium">
+        All
+      </button>
+      <button
+        class="px-8 py-2 bg-transparent hover:bg-gray-100 text-gray-600 rounded-lg font-medium border"
+      >
+        Open
+      </button>
+      <button
+        class="px-8 py-2 bg-transparent hover:bg-gray-100 text-gray-600 rounded-lg font-medium border"
+      >
+        Closed
+      </button>
     </div>
-  </header>
-  <!-- batton -->
-   <div class="bg-white p-4 rounded-xl shadow mb-6 flex gap-2 w-11/12 mx-auto">
-    <button class="px-8 py-2 bg-indigo-600 text-white rounded-lg font-medium">All</button>
-    <button class="px-8 py-2 bg-transparent hover:bg-gray-100 text-gray-600 rounded-lg font-medium border">Open</button>
-    <button class="px-8 py-2 bg-transparent hover:bg-gray-100 text-gray-600 rounded-lg font-medium border">Closed</button>
-  </div>
 
+    <div class="max-w-11/12 mx-auto">
+      <!-- Issue Header -->
+      <div class="flex justify-between items-center mb-6">
+        <div class="flex">
+          <img src="./assets/Aperture.png" alt="" />
+          <div class="">
+            <h2 class="text-xl font-semibold">50 Issues</h2>
+            <h3>Track and manage your project issues</h3>
+          </div>
+        </div>
 
+        <div class="flex gap-4 text-sm">
+          <span class="flex items-center gap-1">
+            <img src="./assets/Open-Status.png" alt=""
+          /></span>
+          <p>Open</p>
+          <span class="flex items-center gap-1">
+            <img src="./assets/Closed- Status .png" alt=""
+          /></span>
+          <p>Closed</p>
+        </div>
+      </div>
 
-   <script src="./js-file/home.js"></script>
+      <!-- Cards -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- CARD 1 -->
+        <div
+          class="bg-white rounded-xl shadow-sm border-t-4 border-green-500 p-5"
+        >
+          <div class="flex justify-between items-center mb-3">
+            <div
+              class="w-7 h-7 flex items-center justify-center bg-green-100 rounded-full"
+            >
+              <span class="text-green-600 text-sm">✓</span>
+            </div>
+
+            <span
+              class="text-xs font-semibold bg-red-100 text-red-500 px-3 py-1 rounded-full"
+            >
+              HIGH
+            </span>
+          </div>
+
+          <h3 class="font-semibold text-gray-800 leading-5">
+            Fix Navigation Menu On Mobile Devices
+          </h3>
+
+          <p class="text-sm text-gray-500 mt-2">
+            The navigation menu doesn't collapse properly on mobile devices...
+          </p>
+
+          <div class="flex gap-2 mt-4">
+            <span class="text-xs bg-red-100 text-red-500 px-2 py-1 rounded-md">
+              BUG
+            </span>
+
+            <span
+              class="text-xs bg-orange-100 text-orange-500 px-2 py-1 rounded-md"
+            >
+              HELP WANTED
+            </span>
+          </div>
+
+          <div class="mt-4 text-xs text-gray-400">
+            <p>#1 by john_doe</p>
+            <p>1/15/2024</p>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div
+          class="bg-white rounded-xl shadow-sm border-t-4 border-yellow-500 p-5"
+        >
+          <div class="flex justify-between items-center mb-3">
+            <div
+              class="w-7 h-7 flex items-center justify-center bg-green-100 rounded-full"
+            >
+              <span class="text-green-600 text-sm">✓</span>
+            </div>
+
+            <span
+              class="text-xs font-semibold bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full"
+            >
+              MEDIUM
+            </span>
+          </div>
+
+          <h3 class="font-semibold text-gray-800 leading-5">
+            Fix Navigation Menu On Mobile Devices
+          </h3>
+
+          <p class="text-sm text-gray-500 mt-2">
+            The navigation menu doesn't collapse properly on mobile devices...
+          </p>
+
+          <div class="flex gap-2 mt-4">
+            <span class="text-xs bg-red-100 text-red-500 px-2 py-1 rounded-md">
+              BUG
+            </span>
+
+            <span
+              class="text-xs bg-orange-100 text-orange-500 px-2 py-1 rounded-md"
+            >
+              HELP WANTED
+            </span>
+          </div>
+
+          <div class="mt-4 text-xs text-gray-400">
+            <p>#1 by john_doe</p>
+            <p>1/15/2024</p>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div
+          class="bg-white rounded-xl shadow-sm border-t-4 border-purple-500 p-5"
+        >
+          <div class="flex justify-between items-center mb-3">
+            <div
+              class="w-7 h-7 flex items-center justify-center bg-purple-100 rounded-full"
+            >
+              <span class="text-purple-600 text-sm">○</span>
+            </div>
+
+            <span
+              class="text-xs font-semibold bg-gray-200 text-gray-600 px-3 py-1 rounded-full"
+            >
+              LOW
+            </span>
+          </div>
+
+          <h3 class="font-semibold text-gray-800 leading-5">
+            Fix Navigation Menu On Mobile Devices
+          </h3>
+
+          <p class="text-sm text-gray-500 mt-2">
+            The navigation menu doesn't collapse properly on mobile devices...
+          </p>
+
+          <div class="flex gap-2 mt-4">
+            <span class="text-xs bg-red-100 text-red-500 px-2 py-1 rounded-md">
+              BUG
+            </span>
+
+            <span
+              class="text-xs bg-orange-100 text-orange-500 px-2 py-1 rounded-md"
+            >
+              HELP WANTED
+            </span>
+          </div>
+
+          <div class="mt-4 text-xs text-gray-400">
+            <p>#1 by john_doe</p>
+            <p>1/15/2024</p>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div
+          class="bg-white rounded-xl shadow-sm border-t-4 border-green-500 p-5"
+        >
+          <div class="flex justify-between items-center mb-3">
+            <div
+              class="w-7 h-7 flex items-center justify-center bg-green-100 rounded-full"
+            >
+              <span class="text-green-600 text-sm">✓</span>
+            </div>
+
+            <span
+              class="text-xs font-semibold bg-red-100 text-red-500 px-3 py-1 rounded-full"
+            >
+              HIGH
+            </span>
+          </div>
+
+          <h3 class="font-semibold text-gray-800 leading-5">
+            Fix Navigation Menu On Mobile Devices
+          </h3>
+
+          <p class="text-sm text-gray-500 mt-2">
+            The navigation menu doesn't collapse properly on mobile devices...
+          </p>
+
+          <div class="flex gap-2 mt-4">
+            <span class="text-xs bg-red-100 text-red-500 px-2 py-1 rounded-md">
+              BUG
+            </span>
+
+            <span
+              class="text-xs bg-orange-100 text-orange-500 px-2 py-1 rounded-md"
+            >
+              HELP WANTED
+            </span>
+          </div>
+
+          <div class="mt-4 text-xs text-gray-400">
+            <p>#1 by john_doe</p>
+            <p>1/15/2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js-file/home.js"></script>
   </body>
 </html>
-
-

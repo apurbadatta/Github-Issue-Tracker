@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="./assets/github-logo.png"
+      type="image/x-icon"
+    />
     <title>Github-Issue-Tracker|Sign in</title>
 
     <!-- google font -->
@@ -14,21 +18,53 @@
       rel="stylesheet"
     />
     <!-- font icon -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <!-- daisyui and tailwind css -->
-      <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- daisyui and tailwind css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <style>
-        *{
-          font-family: "Geist", sans-serif;
-        }
+      * {
+        font-family: "Geist", sans-serif;
+      }
     </style>
-
   </head>
   <body>
-    <h1>hello</h1>
-
+    <header class="min-h-screen max-w-md bg-base-200 mx-auto">
+      <div class="logo w-[100px] mx-auto pt-16 pb-4">
+        <img src="./assets/github-logo.png" alt="" />
+      </div>
+      <div class="">
+        <h1 class="text-2xl text-center font-bold">GitHub Issues Tracker</h1>
+        <p class="text-center text-[#64748B]">Sign in to manage your issues</p>
+      </div>
+      <div class="hero bg-base-200">
+        <div class="hero-content flex-col lg:flex-row-reverse">
+          <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+            <div class="card-body">
+              <fieldset class="fieldset">
+                <label class="label">Username</label>
+                <input type="text" class="input" placeholder="Enter Username" />
+                <label class="label">Password</label>
+                <input type="password" class="input" placeholder="Password" />
+                <div><a class="link link-hover">Forgot password?</a></div>
+                <button class="btn btn-neutral bg-[#4A00FF] mt-4">Sign In</button>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <script src="./js-file/script.js"></script>
   </body>
 </html>

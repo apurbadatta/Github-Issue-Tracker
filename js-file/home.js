@@ -30,34 +30,42 @@ async function fetchIssues(filter = 'all') {
     }
 }
 
-// Card display kora
+// Card display
+
 function displayIssues(issues) {
     issueContainer.innerHTML = '';
     issueCount.innerText = `${issues.length} Issues`;
 
     issues.forEach(issue => {
+        
         const borderColor = issue.status === 'open' ? 'border-green-500' : 'border-purple-500';
         const statusIcon = issue.status === 'open' ? '✓' : '✕';
         const statusBg = issue.status === 'open' ? 'bg-green-100 text-green-600' : 'bg-purple-100 text-purple-600';
 
-        // Labels handle kora
+      
+        let priorityClass = "";
+        const priority = issue.priority.toLowerCase();
+
+        if (priority === 'high') {
+            priorityClass = "bg-red-100 text-red-600";
+        } else if (priority === 'medium') {
+            priorityClass = "bg-orange-100 text-orange-600";
+        } else if (priority === 'low') {
+            priorityClass = "bg-blue-100 text-blue-600";  
+        } else {
+            priorityClass = "bg-gray-100 text-gray-600";    
+        }
+
+        
         let labelsHtml = '';
         if (issue.labels && Array.isArray(issue.labels)) {
             issue.labels.forEach(label => {
-                let colorClass = "bg-gray-100 text-gray-600 border-gray-200"; // Default
-                
-                if (label.toLowerCase() === 'bug') {
-                    colorClass = "bg-red-50 text-red-500 border-red-100";
-                } else if (label.toLowerCase() === 'help wanted') {
-                    colorClass = "bg-orange-50 text-orange-500 border-orange-100";
-                } else if (label.toLowerCase() === 'enhancement') {
-                    colorClass = "bg-green-50 text-green-600 border-green-100";
-                }
+                let labelColor = "bg-gray-50 text-gray-600 border-gray-100";
+                if (label.toLowerCase() === 'bug') labelColor = "bg-red-50 text-red-500 border-red-100";
+                else if (label.toLowerCase() === 'help wanted') labelColor = "bg-orange-50 text-orange-600 border-orange-100";
+                else if (label.toLowerCase() === 'enhancement') labelColor = "bg-green-50 text-green-600 border-green-100";
 
-                labelsHtml += `
-                    <span class="text-[10px] font-bold px-2 py-0.5 rounded-full border ${colorClass} uppercase">
-                        ${label}
-                    </span>`;
+                labelsHtml += `<span class="text-[10px] font-bold px-2 py-0.5 rounded-full border ${labelColor} uppercase">${label}</span>`;
             });
         }
 
@@ -69,9 +77,9 @@ function displayIssues(issues) {
             <div class="flex-grow">
                 <div class="flex justify-between items-center mb-3">
                     <div class="w-7 h-7 flex items-center justify-center ${statusBg} rounded-full">
-                        <span class="text-sm">${statusIcon}</span>
+                        <span class="text-sm font-bold">${statusIcon}</span>
                     </div>
-                    <span class="text-xs font-semibold bg-red-100 text-red-500 px-3 py-1 rounded-full uppercase">
+                    <span class="text-[10px] font-bold ${priorityClass} px-3 py-1 rounded-full uppercase">
                         ${issue.priority}
                     </span>
                 </div>
@@ -88,6 +96,7 @@ function displayIssues(issues) {
                     <p class="mb-1">#${issue.id} by <span class="text-gray-600 font-medium">${issue.author}</span></p>
                     <p>${new Date(issue.createdAt).toLocaleDateString()}</p>
                 </div>
+                <span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase text-gray-500">${issue.category}</span>
             </div>
         `;
         issueContainer.appendChild(card);

@@ -96,7 +96,7 @@ function displayIssues(issues) {
                     <p class="mb-1">#${issue.id} by <span class="text-gray-600 font-medium">${issue.author}</span></p>
                     <p>${new Date(issue.createdAt).toLocaleDateString()}</p>
                 </div>
-                <span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase text-gray-500">${issue.category}</span>
+                
             </div>
         `;
         issueContainer.appendChild(card);
